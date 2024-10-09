@@ -52,9 +52,14 @@
 
         <div class="game-container bg-gradient-to-r from-purple-600 to-blue-600 p-1 rounded-lg mb-8 relative">
             <iframe id="gameFrame" src="https://storage.geometrydashspam.xyz/The_Great_Escape_AKA_Geometry_Spam_____________________%23Games_%23All.html" class="w-full h-[600px] rounded-lg" frameborder="0"></iframe>
-            <button id="fullscreenButton" class="fullscreen-button bg-cyan-500 hover:bg-cyan-600 text-white font-bold py-2 px-4 rounded">
-                Full Screen
-            </button>
+            <div class="absolute bottom-2 left-2 right-2 flex justify-between">
+                <button id="resetButton" class="bg-red-500 hover:bg-red-600 text-white font-bold py-2 px-4 rounded">
+                    Reset Game
+                </button>
+                <button id="fullscreenButton" class="bg-cyan-500 hover:bg-cyan-600 text-white font-bold py-2 px-4 rounded">
+                    Full Screen
+                </button>
+            </div>
         </div>
 
         <div class="bg-gray-800 p-6 rounded-lg mb-8">
@@ -141,6 +146,7 @@
     <script>
         const gameFrame = document.getElementById('gameFrame');
         const fullscreenButton = document.getElementById('fullscreenButton');
+        const resetButton = document.getElementById('resetButton');
 
         fullscreenButton.addEventListener('click', toggleFullScreen);
 
@@ -199,6 +205,10 @@
                     menu.classList.add('hidden');
                 }
             });
+        });
+
+        resetButton.addEventListener('click', function() {
+            gameFrame.src = gameFrame.src;
         });
     </script>
 </body>
